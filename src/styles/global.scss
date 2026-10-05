@@ -1,0 +1,43 @@
+@use './variables' as *;
+@use './reset';
+
+:root {
+  font-family: $font-sans;
+  color: $text-primary;
+  background: $bg-primary;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: $bg-primary;
+  color: $text-primary;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: $accent;
+  color: $bg-primary;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
