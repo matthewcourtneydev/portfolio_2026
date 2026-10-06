@@ -1,0 +1,311 @@
+@use "../../styles/variables" as *;
+
+.experience {
+  padding: 7rem 2rem;
+  scroll-margin-top: 6rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+
+  color: var(--color-text);
+  font-family: $font-sans;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+
+  &::after {
+    content: "";
+    display: block;
+    width: min(25vw, 280px);
+    height: 1px;
+    margin-left: 0.5rem;
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.number {
+  color: var(--color-accent);
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.experienceItem {
+  max-width: 820px;
+}
+
+.companyHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+
+  h3 {
+    margin: 0;
+    color: var(--color-text);
+    font-family: $font-sans;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+  }
+}
+
+.location {
+  margin-top: 0.4rem;
+  color: var(--color-text-muted, #a0a0a0);
+  font-family: $font-mono;
+  font-size: 0.75rem;
+}
+
+.companyDates {
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+  color: var(--color-accent);
+  font-family: $font-mono;
+  font-size: 0.75rem;
+}
+
+.summary {
+  max-width: 640px;
+  margin-top: 2rem;
+  color: var(--color-text-muted, #a0a0a0);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.timeline {
+  position: relative;
+  max-width: 760px;
+  margin-top: 3.5rem;
+  margin-left: 0.35rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.6rem;
+    bottom: 1rem;
+    left: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.14);
+  }
+}
+
+.role {
+  position: relative;
+  padding: 0 0 2.5rem 2.5rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.marker {
+    position: absolute;
+    top: 0.4rem;
+    left: -0.3rem;
+    width: 0.65rem;
+    height: 0.65rem;
+    border: 1px solid var(--color-text-muted, #a0a0a0);
+    border-radius: 50%;
+    background: var(--color-background);
+  
+    transition:
+      border-color 350ms ease,
+      background 350ms ease,
+      box-shadow 350ms ease,
+      transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .markerCurrent {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(237, 113, 60, 0.1);
+  }
+
+.roleHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+
+  h4 {
+    margin: 0;
+    color: var(--color-text);
+    font-family: $font-sans;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+}
+
+.roleType {
+  margin-top: 0.3rem;
+  color: var(--color-accent);
+  font-family: $font-mono;
+  font-size: 0.7rem;
+}
+
+.roleDates {
+  flex-shrink: 0;
+  color: var(--color-text-muted, #a0a0a0);
+  font-family: $font-mono;
+  font-size: 0.7rem;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 680px;
+  padding: 0;
+  margin: 1.75rem 0 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: var(--color-text-muted, #a0a0a0);
+    font-size: 0.95rem;
+    line-height: 1.75;
+
+    &::before {
+        content: "▹";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--color-accent);
+        font-family: $font-mono;
+      
+        opacity: 0.7;
+        transition: opacity 300ms ease;
+      }
+  }
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+  padding: 0;
+  margin: 1.75rem 0 2.25rem;
+  list-style: none;
+
+  li {
+    color: var(--color-text-muted, #a0a0a0);
+    font-family: $font-mono;
+    font-size: 0.7rem;
+
+    &::before {
+      content: "#";
+      margin-right: 0.25rem;
+      color: var(--color-accent);
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .role:hover {
+      .marker {
+        transform: scale(1.15);
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 4px rgba(237, 113, 60, 0.08);
+      }
+  
+      .markerCurrent {
+        box-shadow: 0 0 0 5px rgba(237, 113, 60, 0.14);
+      }
+  
+      .highlights li::before {
+        opacity: 1;
+      }
+    }
+  }
+
+@media (max-width: 680px) {
+  .experience {
+    padding: 6rem 1.5rem;
+  }
+
+  .heading {
+    margin-bottom: 3rem;
+
+    &::after {
+      width: min(20vw, 120px);
+    }
+  }
+
+  .companyHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .companyDates {
+    margin-top: 0;
+  }
+
+  .summary {
+    margin-top: 1.5rem;
+  }
+
+  .timeline {
+    margin-top: 3rem;
+  }
+
+  .roleHeader {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .roleDates {
+    order: 2;
+  }
+
+  .role {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .experience {
+      padding-inline: 1.25rem;
+    }
+  
+    .heading {
+      gap: 0.75rem;
+    }
+  
+    .role {
+      padding-left: 1.75rem;
+    }
+  
+    .companyHeader {
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  
+    .summary {
+      font-size: 0.9rem;
+    }
+  
+    .highlights {
+      li {
+        font-size: 0.9rem;
+      }
+    }
+  
+    .technologies {
+      gap: 0.6rem 1rem;
+      margin-bottom: 1.75rem;
+    }
+  }

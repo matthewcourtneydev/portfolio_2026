@@ -1,75 +1,94 @@
-# React + TypeScript + Vite
+# Matt Courtney — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal developer portfolio showcasing my frontend engineering work, selected projects, experience, and approach to building accessible and responsive web applications.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+I'm a frontend engineer focused on building thoughtful digital experiences that are accessible, responsive, intuitive, and maintainable.
 
-## React Compiler
+This portfolio was designed and developed from scratch as a place to showcase both my professional experience and personal/client projects.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Featured Projects
 
-## Expanding the ESLint configuration
+### United Wrestling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+A custom, responsive website for a wrestling training facility featuring live Google Calendar integration, dynamic announcements, training and membership information, coach profiles, and streamlined access to registration.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Sun Sisters
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+A custom website for a mobile spray tanning business, combining a distinctive visual identity with responsive layouts, reusable components, client education, service information, and a streamlined path to booking.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Wedding Website
 
+A full-stack wedding experience designed to bring guest information, RSVP management, travel details, and private planning tools into one responsive application.
+
+## Built With
+
+- React
+- TypeScript
+- Vite
+- SCSS
+- Motion
+- HTML5
+- Git / GitHub
+
+## Design & Development
+
+The portfolio was built with an emphasis on:
+
+- Responsive design across desktop, tablet, and mobile
+- Accessible navigation and interaction patterns
+- Keyboard and screen reader usability
+- Reusable React components
+- Subtle, purposeful motion
+- Reduced-motion support
+- Clean and maintainable styling
+- Performance and user experience
+
+## Local Development
+
+Clone the repository:
+
+```bash
+git clone git@github.com:matthewcourtneydev/portfolio_2026.git
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Navigate to the project:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd portfolio_2026
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Status
+
+The portfolio is actively being refined. Additional project content, a downloadable résumé, and final production details will be added over time.
+
+## Contact
+
+**Matt Courtney**
+
+- GitHub: [matthewcourtneydev](https://github.com/matthewcourtneydev)
+- Portfolio: Coming soon
+- LinkedIn: Add LinkedIn URL
+
+---
+
+Designed & built by Matt Courtney.

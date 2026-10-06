@@ -1,0 +1,125 @@
+@use '../../styles/variables' as *;
+
+.contact {
+  display: flex;
+  align-items: center;
+  min-height: 75vh;
+  padding: 8rem 2rem;
+  scroll-margin-top: 6rem;
+}
+
+.container {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 0 1.75rem;
+  color: var(--color-accent);
+  font-family: $font-mono;
+  font-size: 0.8rem;
+
+  span {
+    font-size: 0.7rem;
+  }
+}
+
+.heading {
+  margin: 0;
+  color: var(--color-text);
+  font-family: $font-sans;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.description {
+  max-width: 620px;
+  margin: 2rem auto 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  
+    margin-top: 2.75rem;
+    padding: 0.9rem 1.4rem;
+  
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+  
+    color: var(--color-accent);
+    font-family: $font-mono;
+    font-size: 0.8rem;
+  
+    background: transparent;
+  
+    box-shadow: 0 0 0 rgba(237, 113, 60, 0);
+  
+    transition:
+      background 350ms ease,
+      box-shadow 350ms ease;
+  
+    span {
+      display: inline-block;
+  
+      transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  
+    &:hover,
+    &:focus-visible {
+      background: rgba(237, 113, 60, 0.08);
+      box-shadow: 0 0 24px rgba(237, 113, 60, 0.08);
+  
+      span {
+        transform: translate(2px, -2px);
+      }
+    }
+  
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 5px;
+    }
+  }
+
+@media (max-width: 900px) {
+  .contact {
+    min-height: 70vh;
+    padding: 7rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    min-height: 70vh;
+    padding: 6rem 1rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 1.25rem;
+  }
+
+  .heading {
+    font-size: clamp(2.25rem, 11vw, 3rem);
+  }
+
+  .description {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .email {
+    margin-top: 2.25rem;
+  }
+}

@@ -1,0 +1,138 @@
+@use "../../styles/variables" as *;
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 19rem;
+  padding: 1.75rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition:
+    border-color 350ms ease,
+    background 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+.icon {
+  color: var(--color-accent);
+
+  font-family: $font-mono;
+  font-size: 1rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    color: var(--color-text-muted);
+
+    font-family: $font-mono;
+    font-size: 0.7rem;
+
+    transition: color var(--transition-base);
+
+    span {
+      display: inline-block;
+      color: var(--color-accent);
+
+      transition: transform var(--transition-base);
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent);
+
+      span {
+        transform: translate(2px, -2px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 5px;
+      border-radius: 2px;
+    }
+  }
+}
+
+.title {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: $font-sans;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.description {
+  margin: 1rem 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+
+  margin: auto 0 0;
+  padding: 2rem 0 0;
+
+  list-style: none;
+
+  li {
+    color: var(--color-text-muted);
+
+    font-family: $font-mono;
+    font-size: 0.68rem;
+
+    &::before {
+      content: "#";
+      margin-right: 0.2rem;
+      color: var(--color-accent);
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project:hover {
+    border-color: rgba(237, 113, 60, 0.22);
+    background: rgba(237, 113, 60, 0.025);
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.16),
+      0 0 0 1px rgba(237, 113, 60, 0.025);
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    min-height: 17rem;
+    padding: 1.5rem;
+  }
+}

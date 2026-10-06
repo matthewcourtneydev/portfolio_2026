@@ -1,0 +1,127 @@
+@use "../../styles/variables" as *;
+
+.work {
+  padding: 7rem 2rem;
+  scroll-margin-top: 6rem;
+}
+
+.container {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0 0 5rem;
+  color: var(--color-text);
+  font-family: $font-sans;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+}
+
+.number {
+  color: var(--color-accent);
+  font-family: $font-mono;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.line {
+  width: min(20rem, 30vw);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+}
+
+.otherHeading {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  margin: 8rem 0 3rem;
+
+  h3 {
+    flex-shrink: 0;
+    margin: 0;
+
+    color: var(--color-text);
+    font-family: $font-sans;
+    font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+  }
+
+  span {
+    width: min(16rem, 25vw);
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.otherProjects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  > div {
+    height: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .work {
+    padding: 7rem 2rem;
+  }
+
+  .heading {
+    margin-bottom: 4rem;
+  }
+
+  .projects {
+    gap: 7rem;
+  }
+
+  .otherProjects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .work {
+    padding-inline: 1.25rem;
+  }
+
+  .heading {
+    gap: 0.8rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .line {
+    flex: 1;
+    width: auto;
+  }
+
+  .projects {
+    gap: 6rem;
+  }
+
+  .otherHeading {
+    margin-top: 6rem;
+
+    span {
+      flex: 1;
+      width: auto;
+    }
+  }
+
+  .otherProjects {
+    grid-template-columns: 1fr;
+  }
+}
